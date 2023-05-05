@@ -1,12 +1,8 @@
-import { Button, Chip, Input } from "./ui";
+import { MainPage } from "./pages";
 
 function App() {
   return (
-    <>
-      <Chip>fjh</Chip>
-      <Input placeholder="Go-to meals" />
-      <Button>Create recipe</Button>
-    </>
+    <MainPage />
   );
 
 }

@@ -1,11 +1,29 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, KeyboardEvent } from "react";
 import "./input.scss";
 
 interface InputProps {
-  placeholder?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  name: string;
+  value: string;
+  placeholder: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export function Input({ placeholder, onChange }: InputProps) {
-  return <input className="input" placeholder={placeholder} onChange={onChange} />;
+export function Input({
+  name,
+  value,
+  placeholder,
+  onChange,
+  onKeyDown,
+}: InputProps) {
+  return (
+    <input
+      value={value}
+      name={name}
+      className='input'
+      placeholder={placeholder}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+    />
+  );
 }

@@ -3,9 +3,7 @@
   height: 50px;
   border-radius: 5px;
   border-style: solid;
-  -webkit-box-shadow: 0px 0px 40px -9px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 0px 40px -9px rgba(66, 68, 90, 1);
-  box-shadow: 0px 0px 40px -9px rgba(66, 68, 90, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-color: transparent;
   outline: none;
 
@@ -18,6 +16,5 @@
     color: lightgray;
     font-size: 16px;
     text-align: center;
-
   }
 }

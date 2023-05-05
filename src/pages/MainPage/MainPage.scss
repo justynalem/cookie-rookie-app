@@ -1,0 +1,26 @@
+.mainPage {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &__headerText {
+    text-transform: uppercase;
+  }
+
+  &__container {
+    margin: 0 25px;
+  }
+
+  &__containerText {
+    text-align: center;
+  }
+
+  &__buttonContainer {
+    margin-top: 25px;
+  }
+}
