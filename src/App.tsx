@@ -1,7 +1,12 @@
-
+import { Chip, Input } from "./ui";
 
 function App() {
-  return null;
+  return (
+    <>
+      <Chip>fjh</Chip>
+      <Input placeholder="Go-to meals" />
+    </>
+  );
 
 }
 
