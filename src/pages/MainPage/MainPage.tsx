@@ -134,16 +134,20 @@ export function MainPage() {
       order,
     };
 
-    const response = await fetch(REQUEST_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+    try {
+      const response = await fetch(REQUEST_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
 
-    if (response.ok) {
-      alert("Data sent to server");
+      if (response.ok) {
+        alert("Data sent to server");
+      }
+    } catch (err) {
+      console.error(err);
     }
   };
 
