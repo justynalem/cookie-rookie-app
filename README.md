@@ -41,3 +41,9 @@ npm run build
 ```
 
 This will create a `dist` directory with the compiled assets.
+
+### Toptal postbin generator url
+
+The link added to the repo expires after some time. Use this link to generate new one:
+
+https://www.toptal.com/developers/postbin/
