@@ -7,10 +7,10 @@ interface CookieRookieState {
   newMeal: string;
   newItemsInFridge: string;
   newKitchenware: string;
-  order: Meal | "";
+  order: Meal;
 }
 
-enum Meal {
+export enum Meal {
   breakfast = "breakfast",
   dinner = "dinner",
 }

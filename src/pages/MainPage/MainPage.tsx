@@ -1,12 +1,13 @@
 import { ChipsList } from "../../components";
-import { useCookieRookie, InputNames } from "../../hooks";
+import { useCookieRookie, InputNames, Meal } from "../../hooks";
 import { Button, Input } from "../../ui";
 import "./MainPage.scss";
 
-const REQUEST_URL = "/api/1683293701191-7758839300367";
+const REQUEST_URL = "/api/1683300463483-2049510388169";
 
 export function MainPage() {
-  const { handleKeyDown, handleOnChange, handleRemove, items } = useCookieRookie();
+  const { handleKeyDown, handleOnChange, handleRemove, items } =
+    useCookieRookie();
 
   const handleOnClick = async () => {
     const { itemsInFridge, kitchenware, meals, order } = items;
@@ -87,7 +88,16 @@ export function MainPage() {
         />
 
         <div className='mainPage__buttonContainer'>
-          <Button onClick={handleOnClick}>Create recipe</Button>
+          <Button
+            disabled={
+              items.meals.length < 1 ||
+              items.itemsInFridge.length < 1 ||
+              items.kitchenware.length < 1 ||
+              ![Meal.breakfast, Meal.dinner].includes(items.order)
+            }
+            onClick={handleOnClick}>
+            Create recipe
+          </Button>
         </div>
       </div>
     </>
