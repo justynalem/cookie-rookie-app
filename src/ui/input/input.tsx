@@ -2,10 +2,10 @@ import { ChangeEvent, KeyboardEvent } from "react";
 import "./input.scss";
 
 interface InputProps {
-  name: string;
-  value: string;
+  name?: string;
+  value?: string;
   placeholder: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
