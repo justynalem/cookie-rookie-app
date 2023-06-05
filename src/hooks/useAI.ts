@@ -20,7 +20,7 @@ export function useAi() {
       try {
         setIsLoading(true);
         const res = await fetch(
-          "http://127.0.0.1:5001/cook-ai-8a3e3/us-central/getMeal",
+          "https://getmeal-otp52gktdq-uc.a.run.app",
           {
             body: JSON.stringify({
               meals,

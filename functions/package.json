@@ -16,6 +16,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "chatgpt": "^5.2.5",
+    "cors": "^2.8.5",
     "firebase-admin": "^11.8.0",
     "firebase-functions": "^4.3.1"
   },
