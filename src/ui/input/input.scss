@@ -3,12 +3,12 @@
   height: 50px;
   border-radius: 5px;
   border-style: solid;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-color: transparent;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.16);
   outline: none;
 
   &:focus {
-    border-color: #0F2027;
+    border-color: #0f2027;
     border-width: 2px;
   }
 

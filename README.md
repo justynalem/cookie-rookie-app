@@ -28,6 +28,7 @@ To start the development server, run:
 
 ```sh
 npm run dev
+firebase emulators:start --only functions
 ```
 
 This will start the development server at `http://localhost:5173`.

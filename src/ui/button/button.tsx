@@ -9,7 +9,7 @@ interface ButtonProps {
 
 export function Button({ children, onClick, disabled = false }: ButtonProps) {
   return (
-    <button className='btn' onClick={onClick} disabled={disabled}>
+    <button className="btn" onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

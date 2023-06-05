@@ -1,10 +1,7 @@
 import { MainPage } from "./pages";
 
 function App() {
-  return (
-    <MainPage />
-  );
-
+  return <MainPage />;
 }
 
 export default App;

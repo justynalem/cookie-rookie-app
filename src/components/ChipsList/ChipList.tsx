@@ -7,11 +7,11 @@ interface ChipsListProps {
 }
 export function ChipsList({ items = [], onDelete }: ChipsListProps) {
   if (items.length < 1) {
-    return null
+    return null;
   }
   return (
-    <div className='chipsList'>
-      {items.map(item => (
+    <div className="chipsList">
+      {items.map((item) => (
         <Chip key={item} onRemove={() => onDelete(item)}>
           {item}
         </Chip>

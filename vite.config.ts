@@ -9,7 +9,7 @@ export default defineConfig({
       "/api": {
         target: "https://www.toptal.com/developers/postbin/",
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },

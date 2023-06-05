@@ -20,7 +20,8 @@
   }
 
   &__container {
-    margin:25px 25px;
+    position: relative;
+    margin: 25px 25px;
     width: 50%;
     @media (max-width: 1280px) {
       width: 75%;
@@ -29,6 +30,19 @@
     @media (max-width: 400px) {
       width: 90%;
     }
+  }
+
+  &__closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  &__recipe {
+    white-space: pre-wrap;
+    min-height: 400px;
   }
 
   &__itemsContainer {
@@ -41,5 +55,38 @@
 
   &__buttonContainer {
     margin-top: 25px;
+  }
+}
+
+.scene {
+  perspective: 800px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .card {
+    position: relative;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+
+    &__turned {
+      transform: rotateY(0.5turn);
+    }
+
+    .card__face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: 1s ease-in-out;
+      // -webkit-box-reflect: below 0
+      //   linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+
+      &--back {
+        transform: rotateY(0.5turn);
+      }
+    }
   }
 }

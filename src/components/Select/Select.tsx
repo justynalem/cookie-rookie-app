@@ -24,7 +24,7 @@ export const Select = ({ options, onChange, placeholder }: SelectProps) => {
       options={options}
       onChange={handleChange}
       placeholder={placeholder}
-      theme={theme => ({
+      theme={(theme) => ({
         ...theme,
         borderRadius: 0,
         colors: {

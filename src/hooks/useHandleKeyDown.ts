@@ -11,7 +11,8 @@ export const useHandleKeyDown = () => {
             (event.target as HTMLInputElement).value = "";
           }
         }
-      }, []
+      },
+    []
   );
   return handleKeyDown;
 };
