@@ -1,5 +1,5 @@
-import { onRequest } from "firebase-functions/v2/https";
-import { ChatGPTUnofficialProxyAPI } from "chatgpt";
+import {onRequest} from "firebase-functions/v2/https";
+import {ChatGPTUnofficialProxyAPI} from "chatgpt";
 
 type Body = {
   meals: string[];
@@ -9,7 +9,7 @@ type Body = {
 };
 
 export const getMeal = onRequest(
-  { timeoutSeconds: 540 },
+  {timeoutSeconds: 540},
   async (request, response) => {
     if (!process.env.ACCESS_TOKEN) {
       response.sendStatus(500);
@@ -26,16 +26,13 @@ export const getMeal = onRequest(
       apiReverseProxyUrl: "https://api.pawan.krd/backend-api/conversation",
     });
 
-    const prompt = `Can you propose a meal similar to ${body.meals.join(
-      ", "
-    )} i have in my fridge this items ${body.itemsInFridge.join(
-      ", "
-    )} also I have this kitchenware ${body.kitchenware.join(
-      ", "
-    )} and it needs to be a ${body.mealType}`;
+    const prompt = `Can you propose a meal similar to ${body.meals.join(", ")} 
+    i have in my fridge this items ${body.itemsInFridge.join(", ")} 
+    also I have this kitchenware ${body.kitchenware.join(", ")} 
+    and it needs to be a ${body.mealType}`;
 
-    const { text } = await api.sendMessage(prompt);
+    const {text} = await api.sendMessage(prompt);
 
-    response.send({ text });
+    response.send({text});
   }
 );

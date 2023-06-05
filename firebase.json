@@ -14,16 +14,5 @@
         "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }
-  ],
-  "hosting": {
-    "public": "dist",
-    "ignore": [],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "predeploy": ["npm run lint", "npm run build"]
-  }
+  ]
 }
