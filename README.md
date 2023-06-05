@@ -1,6 +1,8 @@
-# Cookie rookie
+# Cook-AI
 
-This is a simple React project bootstrapped with [Vite](https://vitejs.dev/).
+## Live Demo
+
+Check out the live demo of the app [here](https://cook-ai.netlify.app).
 
 ## Getting Started
 
@@ -13,7 +15,7 @@ Before you start, you need to have [Node.js](https://nodejs.org/) and [npm](http
 1. Clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/justynalem/cookie-rookie-app.git
+git clone https://github.com/justynalem/cookie-ai.git
 ```
 
 2. Install the dependencies:
@@ -42,9 +44,3 @@ npm run build
 ```
 
 This will create a `dist` directory with the compiled assets.
-
-### Toptal postbin generator url
-
-The link added to the repo expires after some time. Use this link to generate new one:
-
-https://www.toptal.com/developers/postbin/
