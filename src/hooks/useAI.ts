@@ -19,6 +19,7 @@ export function useAi() {
     }) => {
       try {
         setIsLoading(true);
+        setIsError(false);
         const res = await fetch(
           "https://getmeal-otp52gktdq-uc.a.run.app",
           {
