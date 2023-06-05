@@ -9,11 +9,11 @@ export const Overlay = ({
 }) => {
   if (!isOpen) return null;
   return (
-    <div className="overlay">
+    <div className='overlay'>
       <div>
-        <img src="loading-animation.gif" />
+        <img className='overlay__image' src='loading-animation.gif' />
       </div>
-      {text ? <p className="overlay__text">{text}</p> : null}
+      {text ? <p className='overlay__text'>{text}</p> : null}
     </div>
   );
 };
