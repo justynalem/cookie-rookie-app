@@ -31,13 +31,21 @@ export const MultipleSelectIconList = ({
     ref.current.value = "";
   };
   return (
-    <div className='btn__list'>
+    <div className='multipleSelect__container'>
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
         breakpoints={{
           320: {
             slidesPerView: 2.5,
+            spaceBetween: 10,
+          },
+          375: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          425: {
+            slidesPerView: 3.5,
             spaceBetween: 10,
           },
           640: {
@@ -60,28 +68,41 @@ export const MultipleSelectIconList = ({
         {options.map(({ icon, type }) => {
           const isSelected = values.includes(type);
           return (
-            <SwiperSlide>
+            <SwiperSlide
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                padding: "16px 0",
+              }}>
               <button
                 key={type}
-                className='btn__meals'
-                onClick={() => (isSelected ? onRemove(type) : onAdd(type))}
-                style={{
-                  border: isSelected ? "1px solid red" : "unset",
-                }}>
-                <img className='btn__mealImg' src={icon} />
-                <p className='btn__mealType'>{type}</p>
+                className='multipleSelect__options'
+                onClick={() => (isSelected ? onRemove(type) : onAdd(type))}>
+                {isSelected ? (
+                  <div className='singleSelect__checked'>
+                    <img
+                      className='singleSelect__checkedImg'
+                      src='./checked.svg'
+                    />
+                  </div>
+                ) : null}
+                <img className='multipleSelect__optionImg' src={icon} />
+                <p className='multipleSelect__optionType'>{type}</p>
               </button>
             </SwiperSlide>
           );
         })}
         {custom ? (
           <SwiperSlide>
-            <button key='type' className='btn__meals' onClick={handleAddCustom}>
-              <img className='btn__mealImg' src='/add.svg' />
+            <button
+              key='type'
+              className='multipleSelect__options'
+              onClick={handleAddCustom}>
+              <img className='multipleSelect__optionImg' src='/add.svg' />
               <input
                 placeholder='Add Custom'
                 ref={ref}
-                className='btn__mealType'
+                className='multipleSelect__optionType'
                 onClick={e => {
                   e.stopPropagation();
                 }}

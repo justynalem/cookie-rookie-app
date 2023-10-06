@@ -1,11 +1,11 @@
-.btn {
-  &__list {
+.singleSelect {
+  &__container {
     display: flex;
     width: 100%;
     justify-content: space-around;
   }
 
-  &__meals {
+  &__options {
     width: 120px;
     height: 120px;
     display: flex;
@@ -17,26 +17,35 @@
     cursor: pointer;
     box-sizing: border-box;
     padding: 0;
-
-    &:hover {
-      transform: translate(0, -10px);
-      // border: 1px solid springgreen;
-    }
-
-    &:checked {
-      border: 2px solid green;
-    }
-
+    position: relative;
+    margin-bottom: 8px;
   }
 
-  &__mealImg {
+  &__optionImg {
     width: 50%;
     height: auto;
   }
 
-  &__mealType {
+  &__optionType {
     font-size: 16px;
     text-transform: lowercase;
     font-weight: 600;
   }
+
+  &__checked {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__checkedImg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
 }

@@ -29,6 +29,7 @@ export function MainPage() {
   return (
     <>
       <header className='mainPage__header'>
+        <img style={{ height: "120px", width: "auto" }} src='/cookAIlogo.png' />
         <h1 className='mainPage__headerText'>cook-AI</h1>
       </header>
       <Overlay
@@ -36,17 +37,17 @@ export function MainPage() {
         text='Your recipe is getting ready 🤌 (it takes around a minute 😊)'
       />
       <div className='scene'>
-        <div className='scene__recipeHolder'>
+        <div className='scene__container'>
           <div className={recipe ? "card card__turned" : "card"}>
             <div className='container card__face card__face--front'>
               <div className='scene__inputsHolder'>
-                <p>meal</p>
+                <h3 className='scene__sectionTittle'>meal</h3>
                 <SingleSelectIconList
                   onClick={setMealType}
                   value={mealType}
                   options={mealsOptions}
                 />
-                <p>KitchenWare</p>
+                <h3 className='scene__sectionTittle'>kitchen ware</h3>
                 <MultipleSelectIconList
                   values={kitchenware}
                   onAdd={addKitchenwareWithCustom}
@@ -54,7 +55,7 @@ export function MainPage() {
                   options={kitchenWareOptions}
                   custom
                 />
-                <p>Items in fridge</p>
+                <h3 className='scene__sectionTittle'>items in fridge</h3>
                 <MultipleSelectIconList
                   values={itemsInFridge}
                   onAdd={addItemInFridgeWithCustom}

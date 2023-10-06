@@ -1,15 +1,15 @@
 export const meals = [
   {
     type: "breakfast",
-    icon: "/breakfast-svgrepo-com.svg",
+    icon: "/breakfast.svg",
   },
   {
     type: "lunch",
-    icon: "/lunch-svgrepo-com.svg",
+    icon: "/lunch.svg",
   },
   {
     type: "dinner",
-    icon: "/tray-dinner-svgrepo-com.svg",
+    icon: "/dinner.svg",
   },
 ];
 

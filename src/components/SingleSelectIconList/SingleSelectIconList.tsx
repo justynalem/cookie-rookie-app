@@ -15,43 +15,40 @@ export const SingleSelectIconList = ({
   options = [],
 }: SingleSelectIconListProps) => {
   return (
-    <div className='btn__list'>
+    <div className='singleSelect__container'>
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
         breakpoints={{
           320: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 2.5,
+            spaceBetween: 10,
+          },
+          375: {
+            slidesPerView: 3,
+            spaceBetween: 10,
           },
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 6,
-            spaceBetween: 8,
-          },
-          1680: {
-            slidesPerView: 6,
-            spaceBetween: 8,
           },
         }}>
         {options.map(({ icon, type }) => (
-          <SwiperSlide>
+          <SwiperSlide style={{ display: "flex", justifyContent: "center" }}>
             <button
               key={type}
-              className='btn__meals'
-              onClick={() => onClick(type)}
-              style={{
-                border: value === type ? "1px solid red" : "unset",
-              }}>
-              <img className='btn__mealImg' src={icon} />
-              <p className='btn__mealType'>{type}</p>
+              className='singleSelect__options'
+              onClick={() => onClick(type)}>
+              {value === type ? (
+                <div className='singleSelect__checked'>
+                  <img
+                    className='singleSelect__checkedImg'
+                    src='./checked.svg'
+                  />
+                </div>
+              ) : null}
+              <img className='singleSelect__optionImg' src={icon} />
+              <p className='singleSelect__optionType'>{type}</p>
             </button>
           </SwiperSlide>
         ))}
