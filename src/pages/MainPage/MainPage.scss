@@ -10,19 +10,21 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 80px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background-color: #fff;
   }
 
   &__headerText {
     text-transform: uppercase;
+    color: #04FC8C;
   }
 
   &__container {
     position: relative;
     margin: 25px 25px;
     width: 50%;
+
     @media (max-width: 1280px) {
       width: 75%;
     }
@@ -59,34 +61,80 @@
 }
 
 .scene {
-  perspective: 800px;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  max-width: 1200px;
+  margin: 24px auto 24px;
+  height: calc(100vh - 128px);
 
-  .card {
+  &__inputsHolder {
+    width: 100%;
+    height: 100%;
+    // border: 1px solid red;
+    // border: 1px solid darkblue;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__recipeHolder {
+    width: 100%;
+    height: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    align-items: center;
+    background-color: #B2FF59;
+  }
+
+  &__categoryHolder {
+    width: 50%;
+    text-align: center;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+    position: relative;
+  }
+
+}
+
+// .scene {
+//   perspective: 800px;
+//   display: flex;
+//   justify-content: space-between;
+
+.card {
+  position: absolute;
+  top: 0;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+
+  &__turned {
+    transform: rotateY(0.5turn);
+  }
+
+  .card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     transition: 1s ease-in-out;
-    transform-style: preserve-3d;
+    // -webkit-box-reflect: below 0
+    //   linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
 
-    &__turned {
+    &--back {
       transform: rotateY(0.5turn);
-    }
-
-    .card__face {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      transition: 1s ease-in-out;
-      // -webkit-box-reflect: below 0
-      //   linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-
-      &--back {
-        transform: rotateY(0.5turn);
-      }
     }
   }
 }

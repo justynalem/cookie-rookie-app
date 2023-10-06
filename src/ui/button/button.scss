@@ -1,15 +1,21 @@
 .btn {
   width: 100%;
   height: 50px;
-  border-radius: 5px;
-  background-color: #0f2027;
+  border-radius: 25px;
+  background-color: #04FC8C;
   color: #fff;
   font-size: 16px;
   border: none;
+  border-bottom: 1px solid #1CE58A;
+
   cursor: pointer;
 
+  &--width50 {
+    width: 50%;
+  }
+
   &:disabled {
-    background-color: gray;
+    background-color: #758B81;
     cursor: not-allowed;
   }
 }

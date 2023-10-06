@@ -1,0 +1,42 @@
+.btn {
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &__meals {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0;
+
+    &:hover {
+      transform: translate(0, -10px);
+      // border: 1px solid springgreen;
+    }
+
+    &:checked {
+      border: 2px solid green;
+    }
+  }
+
+  &__mealImg {
+    width: 50%;
+    height: auto;
+  }
+
+  &__mealType {
+    font-size: 16px;
+    text-transform: lowercase;
+    font-weight: 600;
+  }
+}

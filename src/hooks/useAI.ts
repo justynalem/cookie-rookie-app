@@ -9,10 +9,8 @@ export function useAi() {
     async ({
       itemsInFridge,
       mealType,
-      meals,
       kitchenware,
     }: {
-      meals: string[];
       itemsInFridge: string[];
       kitchenware: string[];
       mealType: string;
@@ -24,7 +22,6 @@ export function useAi() {
           "https://getmeal-otp52gktdq-uc.a.run.app",
           {
             body: JSON.stringify({
-              meals,
               itemsInFridge,
               kitchenware,
               mealType,

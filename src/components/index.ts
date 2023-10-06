@@ -1,3 +1,2 @@
-export * from "./ChipsList/ChipList";
-export * from "./Select/Select";
-export * from "./InputWithButton/InputWithButton";
+export * from "./SingleSelectIconList/SingleSelectIconList";
+export * from "./MultipleSelectIconList/MultipleSelectIconList";
