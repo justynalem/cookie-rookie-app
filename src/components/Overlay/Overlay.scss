@@ -1,9 +1,9 @@
 .overlay {
   position: absolute;
-  top: 80px;
+  top: 50px;
   left: 0;
   min-width: 100vw;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -12,11 +12,6 @@
   flex-direction: column;
   overflow: hidden;
   justify-content: center;
-
-  @media (max-width: 1024px) {
-    top: 50px;
-    height: calc(100vh - 50px);
-  }
 
   &__image {
     width: 100%;

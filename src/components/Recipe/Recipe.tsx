@@ -15,14 +15,20 @@ export const Recipe = ({
 }: RecipeProps) => {
   return (
     <div className='recipe__container'>
-      <p>{title}</p>
+      <img className='recipe__img' src='/recipe.svg' />
+      <p className='recipe__title'>{title}</p>
       <p>{description}</p>
-      <ul>
+      <hr className='recipe__divider' />
+      <p className='recipe__smallTitle'>ingredients</p>
+
+      <ul className='recipe__list'>
         {ingredients.map(item => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <ul>
+      <hr className='recipe__divider' />
+      <p className='recipe__smallTitle'>instructions</p>
+      <ul className='recipe__list'>
         {instructions.map(item => (
           <li key={item}>{item}</li>
         ))}
