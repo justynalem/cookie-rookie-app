@@ -19,6 +19,9 @@ export const SingleSelectIconList = ({
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
+        style={{
+          width: "100%",
+        }}
         breakpoints={{
           320: {
             slidesPerView: 2.5,

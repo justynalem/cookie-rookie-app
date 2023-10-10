@@ -40,7 +40,12 @@ export function MainPage() {
       <div className='scene'>
         <div className='scene__container'>
           <div className={recipe ? "card card__turned" : "card"}>
-            <div className='container card__face card__face--front'>
+            <div
+              className='container card__face card__face--front'
+              style={{
+                visibility: recipe ? "hidden" : "unset",
+                opacity: recipe ? 0 : 1,
+              }}>
               <div className='scene__inputsHolder'>
                 <h3 className='scene__sectionTittle'>meal</h3>
                 <SingleSelectIconList
