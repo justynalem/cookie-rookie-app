@@ -6,7 +6,6 @@ import { useMainPageEffects } from "./MainPage.effects";
 
 import "./MainPage.scss";
 import { Recipe } from "../../components/Recipe/Recipe";
-import { useState } from "react";
 
 export function MainPage() {
   const {
@@ -65,27 +64,32 @@ export function MainPage() {
                   options={fridgeOptions}
                   custom
                 />
-
-                <Button
-                  disabled={
-                    itemsInFridge.length < 1 ||
-                    kitchenware.length < 1 ||
-                    Boolean(!mealType)
-                  }
-                  onClick={handleQuery}>
-                  {isLoading ? "loading...." : "Let the magic happen!"}
-                </Button>
+                <div className='scene__btnWrapper'>
+                  <Button
+                    disabled={
+                      itemsInFridge.length < 1 ||
+                      kitchenware.length < 1 ||
+                      Boolean(!mealType)
+                    }
+                    onClick={handleQuery}>
+                    {isLoading ? "loading...." : "Let the magic happen!"}
+                  </Button>
+                </div>
               </div>
             </div>
-            <div className='container card__face card__face--back'>
+            <div
+              className='container card__face card__face--back'
+              style={{
+                zIndex: recipe ? 999999 : "unset",
+              }}>
               <Paper>
                 <span onClick={clearRecipe} className='mainPage__closeBtn'>
                   &times;
                 </span>
                 <p className='mainPage__recipe'>
-                  {isError || !recipe ? (
+                  {isError ? (
                     "Something went wrong please try again letter"
-                  ) : (
+                  ) : !recipe ? null : (
                     <Recipe
                       title={recipe.title}
                       ingredients={recipe.ingredients}

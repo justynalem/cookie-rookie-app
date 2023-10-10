@@ -17,9 +17,9 @@ export const Recipe = ({
     <div className='recipe__container'>
       <img className='recipe__img' src='/recipe.svg' />
       <p className='recipe__title'>{title}</p>
-      <p>{description}</p>
+      <p className='recipe__description'>{description}</p>
       <hr className='recipe__divider' />
-      <p className='recipe__smallTitle'>ingredients</p>
+      <p className='recipe__smallTitle'>ingredients:</p>
 
       <ul className='recipe__list'>
         {ingredients.map(item => (
@@ -27,7 +27,7 @@ export const Recipe = ({
         ))}
       </ul>
       <hr className='recipe__divider' />
-      <p className='recipe__smallTitle'>instructions</p>
+      <p className='recipe__smallTitle'>instructions:</p>
       <ul className='recipe__list'>
         {instructions.map(item => (
           <li key={item}>{item}</li>

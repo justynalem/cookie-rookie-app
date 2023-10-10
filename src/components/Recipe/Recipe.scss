@@ -25,6 +25,13 @@
     margin: 0;
   }
 
+  &__description {
+    text-align: center;
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 16px;
+  }
+
   &__smallTitle {
     font-size: 20px;
     text-align: center;
@@ -35,10 +42,17 @@
 
   &__list {
     width: 100%;
-    text-align: center;
+    text-align: left;
     list-style: none;
-    padding: 0
+    padding: 0 15%;
+    max-height: 200px;
+    overflow-y: auto;
+
+    & li {
+      margin: 8px 0;
+    }
   }
+
 
 
   &__divider {
