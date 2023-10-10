@@ -1,8 +1,12 @@
 # Cook-AI
 
-## Live Demo
+## Tool & technologies I've used
 
-Check out the live demo of the app [here](https://cook-ai.netlify.app).
+- React
+- TypeScript
+- Firebase functions
+- SCSS + BEM
+- ChatGPT API
 
 ## Getting Started
 
@@ -44,3 +48,15 @@ npm run build
 ```
 
 This will create a `dist` directory with the compiled assets.
+
+### Screens
+
+# ![cover](screens/screenshot.png)
+
+# ![cover](screens/screenshot5.png)
+
+# ![cover](screens/screenshot2.png)
+
+# ![cover](screens/screenshot3.png)
+
+# ![cover](screens/screenshot4.png)

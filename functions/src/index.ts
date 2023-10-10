@@ -11,7 +11,7 @@ type Body = {
 export const getMeal = onRequest(
   { timeoutSeconds: 540 },
   async (request, response) =>
-    cors({ origin: "*" })(
+    cors({ origin: "https://cook-ai.netlify.app" })(
       request,
       response,
       async () => {
