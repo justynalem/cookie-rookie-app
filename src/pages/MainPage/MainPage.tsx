@@ -3,9 +3,9 @@ import { useAi } from "../../hooks";
 import { Button, Paper } from "../../ui";
 import { Overlay } from "../../components/Overlay/Overlay";
 import { useMainPageEffects } from "./MainPage.effects";
-
-import "./MainPage.scss";
 import { Recipe } from "../../components/Recipe/Recipe";
+import clsx from "clsx";
+import "./MainPage.scss";
 
 export function MainPage() {
   const {
@@ -21,6 +21,7 @@ export function MainPage() {
     setMealType,
     mealsOptions,
   } = useMainPageEffects();
+
   const { isError, isLoading, queryRecipe, recipe, clearRecipe } = useAi();
 
   async function handleQuery() {
@@ -37,23 +38,22 @@ export function MainPage() {
         isOpen={isLoading}
         text='Your recipe is getting ready 🤌 (it takes around a minute 😊)'
       />
-      <div className='scene'>
-        <div className='scene__container'>
+      <div className='mainPage__scene'>
+        <div className='mainPage__sceneContainer'>
           <div className={recipe ? "card card__turned" : "card"}>
             <div
-              className='container card__face card__face--front'
-              style={{
-                visibility: recipe ? "hidden" : "unset",
-                opacity: recipe ? 0 : 1,
-              }}>
-              <div className='scene__inputsHolder'>
-                <h3 className='scene__sectionTittle'>meal</h3>
+              className={clsx(
+                "card__face card__face--front",
+                Boolean(recipe) && "card__hidden"
+              )}>
+              <div className='mainPage__inputsHolder'>
+                <h3 className='mainPage__sectionTittle'>meal</h3>
                 <SingleSelectIconList
                   onClick={setMealType}
                   value={mealType}
                   options={mealsOptions}
                 />
-                <h3 className='scene__sectionTittle'>kitchen ware</h3>
+                <h3 className='mainPage__sectionTittle'>kitchen ware</h3>
                 <MultipleSelectIconList
                   values={kitchenware}
                   onAdd={addKitchenwareWithCustom}
@@ -61,7 +61,7 @@ export function MainPage() {
                   options={kitchenWareOptions}
                   custom
                 />
-                <h3 className='scene__sectionTittle'>items in fridge</h3>
+                <h3 className='mainPage__sectionTittle'>items in fridge</h3>
                 <MultipleSelectIconList
                   values={itemsInFridge}
                   onAdd={addItemInFridgeWithCustom}
@@ -69,7 +69,7 @@ export function MainPage() {
                   options={fridgeOptions}
                   custom
                 />
-                <div className='scene__btnWrapper'>
+                <div className='mainPage__btnWrapper'>
                   <Button
                     disabled={
                       itemsInFridge.length < 1 ||
@@ -83,10 +83,10 @@ export function MainPage() {
               </div>
             </div>
             <div
-              className='container card__face card__face--back'
-              style={{
-                zIndex: recipe ? 999999 : "unset",
-              }}>
+              className={clsx(
+                "card__face card__face--back",
+                Boolean(recipe) && "card__visible"
+              )}>
               <Paper>
                 <span onClick={clearRecipe} className='mainPage__closeBtn'>
                   &times;

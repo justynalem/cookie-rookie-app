@@ -1,9 +1,3 @@
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
 .mainPage {
   &__header {
     display: flex;
@@ -16,16 +10,9 @@
 
   &__headerText {
     background-color: red;
-
-    /* Create the gradient. */
     background-image: linear-gradient(45deg, #f3ec78, #af4261);
-
-    /* Set the background size and repeat properties. */
     background-size: 100%;
     background-repeat: repeat;
-
-    /* Use the text as a mask for the background. */
-    /* This will show the gradient as a text color rather than element bg. */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
@@ -78,47 +65,19 @@
     font-size: 48px;
     cursor: pointer;
   }
-}
 
-.card {
-  position: absolute;
-  top: 0;
-  transition: 1s ease-in-out;
-  transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
+  &__scene {
+    max-width: 1200px;
+    margin: 8px auto 0;
+    height: calc(100vh - 80px);
+    background-image: url("/background.jpg");
+    background-size: cover;
+    border-radius: 16px;
 
-  &__turned {
-    transform: rotateY(0.5turn);
-  }
-
-  .card__face {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transition: 1s ease-in-out;
-    // -webkit-box-reflect: below 0
-    //   linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-
-    &--back {
-      transform: rotateY(0.5turn);
+    @media (max-width: 1024px) {
+      height: calc(100vh - 60px)
     }
-  }
-}
 
-.scene {
-  max-width: 1200px;
-  margin: 8px auto 0;
-  height: calc(100vh - 80px);
-  background-image: url("/background.jpg");
-  background-size: cover;
-  border-radius: 16px;
-
-  @media (max-width: 1024px) {
-    height: calc(100vh - 60px)
   }
 
   &__inputsHolder {
@@ -139,7 +98,7 @@
     }
   }
 
-  &__container {
+  &__sceneContainer {
     width: 100%;
     height: 100px;
     height: 100%;
@@ -169,6 +128,43 @@
 
     @media (max-width: 768px) {
       width: 100%;
+    }
+  }
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+
+  &__turned {
+    transform: rotateY(0.5turn);
+  }
+
+  &__hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__visible {
+    z-index: 999999;
+  }
+
+  .card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s ease-in-out;
+
+
+    &--back {
+      transform: rotateY(0.5turn);
     }
   }
 }

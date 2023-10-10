@@ -5,7 +5,6 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-
   }
 
   &__img {
@@ -48,7 +47,6 @@
     overflow-y: auto;
     max-height: 320px;
 
-
     @media (max-width: 786px) {
       max-height: 200px;
     }
@@ -58,13 +56,10 @@
     }
   }
 
-
-
   &__divider {
     border: 1px dashed #000;
     width: 75%;
   }
-
 }
 
 ::-webkit-scrollbar {
@@ -81,7 +76,6 @@
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #FFF6DD;
 }

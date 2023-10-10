@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "./MultipleSelectIconList.scss";
 import { Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css";
+import "./MultipleSelectIconList.scss";
 
 type MultipleSelectIconListProps = {
   options: { type: string; icon: string }[];
