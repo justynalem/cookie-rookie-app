@@ -5,6 +5,8 @@ import { Overlay } from "../../components/Overlay/Overlay";
 import { useMainPageEffects } from "./MainPage.effects";
 
 import "./MainPage.scss";
+import { Recipe } from "../../components/Recipe/Recipe";
+import { useState } from "react";
 
 export function MainPage() {
   const {
@@ -29,7 +31,7 @@ export function MainPage() {
   return (
     <>
       <header className='mainPage__header'>
-        <img style={{ height: "120px", width: "auto" }} src='/cookAIlogo.png' />
+        <img className='mainPage__headerLogo' src='/cookAIlogo.png' />
         <h1 className='mainPage__headerText'>cook-AI</h1>
       </header>
       <Overlay
@@ -65,7 +67,6 @@ export function MainPage() {
                 />
 
                 <Button
-                  className='btn btn--width50'
                   disabled={
                     itemsInFridge.length < 1 ||
                     kitchenware.length < 1 ||
@@ -82,9 +83,16 @@ export function MainPage() {
                   &times;
                 </span>
                 <p className='mainPage__recipe'>
-                  {isError
-                    ? "Something went wrong please try again letter"
-                    : recipe}
+                  {isError || !recipe ? (
+                    "Something went wrong please try again letter"
+                  ) : (
+                    <Recipe
+                      title={recipe.title}
+                      ingredients={recipe.ingredients}
+                      description={recipe.description}
+                      instructions={recipe.instructions}
+                    />
+                  )}
                 </p>
               </Paper>
             </div>

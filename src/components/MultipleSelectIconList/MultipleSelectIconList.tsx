@@ -72,7 +72,6 @@ export const MultipleSelectIconList = ({
               style={{
                 display: "flex",
                 justifyContent: "center",
-                padding: "16px 0",
               }}>
               <button
                 key={type}
@@ -93,7 +92,11 @@ export const MultipleSelectIconList = ({
           );
         })}
         {custom ? (
-          <SwiperSlide>
+          <SwiperSlide
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}>
             <button
               key='type'
               className='multipleSelect__options'
@@ -102,7 +105,7 @@ export const MultipleSelectIconList = ({
               <input
                 placeholder='Add Custom'
                 ref={ref}
-                className='multipleSelect__optionType'
+                className='multipleSelect__optionInput'
                 onClick={e => {
                   e.stopPropagation();
                 }}
